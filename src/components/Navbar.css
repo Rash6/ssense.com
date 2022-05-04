@@ -1,0 +1,8 @@
+.Navbar{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 10px;
+}
+.Navbar>div{
+    border: 1px solid red;
+}
