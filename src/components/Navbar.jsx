@@ -26,7 +26,7 @@ const handelClick =()=>setClick(!click);
                 <Link to='/everything'  className='link'>
                     EVERYTHINGELSE
                 </Link>
-                <Link to='/mens'
+                <Link to='/search'
                  className='link'
                  >
                     SEARCH
