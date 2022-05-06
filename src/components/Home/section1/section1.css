@@ -1,0 +1,13 @@
+.mainsec1div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+};
+
+
+
+
+.c1img{
+    background-color: black;
+    border: 2px solid black;
+    
+}
