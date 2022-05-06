@@ -10,12 +10,14 @@ import LeftBar from './components/LeftBar';
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
+   
+    <Home />
       <Checkout/>
     <Navbar/>
+
     <LeftBar/>
     <Footer/>
-    </BrowserRouter>
+    
     </div>
   );
 }
