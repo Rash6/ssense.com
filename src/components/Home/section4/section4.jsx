@@ -14,7 +14,7 @@ function Section4() {
        })
    }
   return (
-    <div className='mainsec1div'>
+    <div className='mainsec4div'>
         {
             catg1.map((el)=>{
              return <Card4 el = {el} key={el.id}/>
