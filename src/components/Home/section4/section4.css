@@ -1,0 +1,26 @@
+.mainsec4div{
+    display: grid;
+    grid-gap: 60px;
+    width: 100%;
+    /* border: 4px solid black; */
+   grid-template-columns: repeat(3, 1fr);
+   margin-top: 20px;
+   margin-bottom: 30px;
+}
+
+.catg4div{
+   
+   
+  
+   /* border: 2px solid black; */
+   
+}
+
+.catg4div img{
+   
+    
+    object-fit: cover; 
+    width: 100%;
+    height: 80%;
+    
+}

@@ -1,0 +1,42 @@
+.mainsec1div{
+    display: grid;
+    grid-gap: 10px;
+   grid-template-columns: repeat(2, 1fr);
+   margin-top: 30px;
+   margin-bottom: 30px;
+}
+
+.catg1div{
+   
+   
+   width: 500px;
+   height: 600px;
+   /* border: 2px solid black; */
+   
+}
+
+.catg1div img{
+   
+    
+    object-fit: cover; 
+    width: 100%;
+    height: 80%;
+    
+}
+
+.catg1div button{
+    
+  border-radius: 10px;
+  border: 1px solid gray;
+  width: 200px;
+  padding: 10px;
+  font-size: medium;
+  margin-top: 20px;
+}
+
+.catg1div button:hover{
+
+    cursor: pointer;
+   
+    background-color: grey;
+}
