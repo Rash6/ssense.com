@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './section1.css'
-import { Card1 } from './section1card';
+import {Card1} from './section1card';
 function Section1() {
    const [catg1, setCatg1] = useState([])
    useEffect(()=>{
@@ -27,5 +27,8 @@ function Section1() {
     </div>
   )
 }
+
+
+
 
 export default Section1;
