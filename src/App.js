@@ -2,8 +2,8 @@
 import './App.css';
 // r...
 import {Link} from "react-router-dom"
-import { Login } from './Components/login/login'
-import {Register} from "./Components/register/register"
+import { Login } from './components/login/login'
+import {Register} from "./components/register/register"
 import { Routes, Route } from "react-router-dom";
 // r...
 
