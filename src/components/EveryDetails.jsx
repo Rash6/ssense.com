@@ -3,36 +3,56 @@ import { useState, useEffect } from 'react'
 // import { axios } from "axios";
 import { useParams } from 'react-router-dom'
 import "./MenDetails.css"
+import "./Navbar.css"
+import {useCart} from "react-use-cart"
+import { getActiveElement } from '@testing-library/user-event/dist/utils'
+import Navbar from './Navbar'
+import "./Navbar.css"
 
 export const EveryDetails = () => {
   const { id } = useParams() ;
-  const [ every , setEvery] = useState({})
+  const { addItem, items } = useCart();
+  const [ product , setProduct] = useState({})
   
-  const getData = async () => {
-    
-    const data1 = await fetch(`https://backend-ssense.herokuapp.com/everythings`)
-    let data2 = await data1.json()
-    //   setMens(data2)
-    console.log("data2" ,data2)
-    const detailData = data2.everything.filter((e) => {
-      return e._id === id
-    })
-    // console.log(detailData[0])
-    setEvery(detailData[0])
+
+
+
+  let handleAdd = (product)=>{
+    addItem(product,1);
 
   }
+  console.log("getItems",items);
+   localStorage.setItem("Items",JSON.stringify(items))
   useEffect(() => {
     getData()
   }, [])
+  const getData = async () => {
+    
+    const data1 = await fetch(`https://backend-ssense.herokuapp.com/everythings/`)
+    let data2 = await data1.json()
+    //   setMens(data2)
+    // console.log("data2" ,data2)
+    const detailData = data2.everything.filter((e) => {
+      return e._id === id
+    })
+    const maindata=detailData[0]
+     console.log(maindata)
+    setProduct(maindata)
+
+  }
+ 
   return (
+    <div>
+      
+      <Navbar/>
     <div className='Main-div'>
      
                  <div className="mens-category1">
                
-                        <h5>{every.name}</h5>
+                        <h5>{product.name}</h5>
                     
                     {/* <div className="mens-category-list"> */}
-                        <p>{every.desc}</p>
+                        <p>{product.desc}</p>
                         <h6>Padded polyester satin jacket</h6>
                         <p>. Half-Zip closure at stand collar</p>
                         <p>. Welt pockets</p>
@@ -52,11 +72,11 @@ export const EveryDetails = () => {
                    
                   </div> 
                   <div className="mens-details-img">
-                        <img className='img' img src={every.img} alt="mens" />
+                        <img className='img' img src={product.img} alt="mens" />
                   </div> 
                   <div className="mens-category1">
                
-                        <h5>{every.price} USD</h5>
+                        <h5>{product.price} USD</h5>
                         <select name="" id="size">
                           <option value="">Select Size</option>
                           <option value="XXS">XXS</option>
@@ -68,7 +88,7 @@ export const EveryDetails = () => {
                           <option value="XXL">XXL</option>
                         </select>
                         <div className='Add-to-cart-div'>
-                          <button className="add-to-cart">Add to Bag</button>
+                          <button className="add-to-cart" onClick={()=>{handleAdd(product)}}>Add to Bag</button>
                           <button className="add-to-wish">Add to Wishlist</button>
                         </div>
                         <div className='Add-to-cart-div2'>
@@ -84,10 +104,7 @@ export const EveryDetails = () => {
                   </div> 
       
     </div>
-    
+    </div>
   )
 }
-
-
- 
 

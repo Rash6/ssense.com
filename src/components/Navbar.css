@@ -26,7 +26,8 @@
     width: 100%;
 display: flex;
 justify-content: space-evenly;
-}.link{
+}
+.linkmain{
     color: black;
     margin-right: 20px;
     text-decoration: none;
@@ -34,12 +35,13 @@ justify-content: space-evenly;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 15px;
 }
+
 
  .drop_down {
     display: none;
     position: absolute;
+    background-color: white;
     /* left: 0; */
     top: 100%;
     border: 1px solid grey;
@@ -50,7 +52,7 @@ display: block;
     margin-bottom: 5px;
 }
 
-.link:hover{
+.linkmain:hover{
 text-decoration: underline;
 color: black;
 }

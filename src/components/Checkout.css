@@ -47,6 +47,9 @@
     flex-direction:column;
     margin-bottom:3%;
 }
+.fillDetails>div>input{
+    border:1px solid grey;
+}
 .shippingmethod{
     width: 370px;
     height: 20px;
@@ -110,4 +113,18 @@
     background-color: black;
     color: white;
     height: 30px;
+}
+.cardImage{
+    width:30%;
+    height:30%;
+}
+
+.cartDiv{
+    display:flex;
+    justify-content: space-around;
+
+}
+.cardDiv>div>p{
+    font-size: 20px;
+    text-align: center;
 }

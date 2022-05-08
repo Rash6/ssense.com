@@ -75,7 +75,7 @@ p:hover{
     /* border: 1px solid rgb(12, 12, 12) */
 }
 
-ul{
+.mens-category-list>ul{
     list-style-type: none;
     padding: 0;
     margin-bottom: 6px;
@@ -88,7 +88,7 @@ ul{
 .uderline{
     text-decoration: underline;
 }
-ul:hover{
+.mens-category-list>ul:hover{
     cursor: pointer;
     text-decoration: underline;
 }

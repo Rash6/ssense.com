@@ -8,11 +8,14 @@ function Shoping1() {
     getDataCatg1()
    },[])
    const getDataCatg1 = ()=>{
-       axios.get("http://localhost:8080/shop1").then((res)=>{
-           console.log(res.data)
-           setCatg1(res.data) 
-       })
-   }
+    
+       let data=axios.get("https://backend-ssense.herokuapp.com/shop1").then((res)=>
+        res.json()
+        )
+        data=data.shop1
+        console.log(data);
+       }
+   
   return (
     <div className='mainsec1div'>
         {

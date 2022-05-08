@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Menswear.css"
 import "../App.css"
-//import { Link } from 'react-router-dom'
-//import { Route, Routes } from 'react-router-dom'
+import "./Navbar.css"
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 
 export const Menswear = () => {
@@ -25,22 +27,9 @@ export const Menswear = () => {
       
     }, [])
   
-    // let priceFilter = (men) => {
-    //   return men.sort((a,b) => {
-    //    // let aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
-    //     //let bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
-    //     return aPrice - bPrice;
-    //   });
-    // }
-    //console.log(priceFilter(men));
-    //priceFilter(men)
-    //setMens(priceFilter)
     
     const handleTerminate = (e) => {
-       // console.log(e)
        
-        // let sort = e.target.value
-        
         let data2 = men.sort((a, b) => {
         let aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
         let bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
@@ -59,6 +48,7 @@ export const Menswear = () => {
 
   return (
     <div>
+        <Navbar/>
         <div className="menswear-container">
 
             <div className="mens-category">
@@ -201,12 +191,12 @@ export const Menswear = () => {
                
             {men.map((e)=>
                         {return (
-                        <div key={e.id} className="mens-data-item">
+                          <Link className="mens-data-item" key = {e._id} to = {`${e._id}`}>
                             <img src={e.img} className="menimage" alt="missing"/>
                             <p>{e.name}</p>
                             <p>{e.desc}</p>
                             <p>{e.price}</p>
-                            </div>
+                            </Link>
                             )}
                     )}
                 
@@ -253,7 +243,7 @@ export const Menswear = () => {
         </div>
 
 
-            
+         <Footer/>   
         
     </div>
   )

@@ -1,24 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from "@chakra-ui/react";
 import {BrowserRouter as Router} from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
+import { CartProvider} from "react-use-cart";
 import { store } from "./Redux/store";
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <BrowserRouter> */}
     <ReduxProvider store={store}>
+    <CartProvider>
     <Router>
+      
         <ChakraProvider>
           <App />
         </ChakraProvider>
         
       </Router>
+      </CartProvider>
       </ReduxProvider>
     {/* </BrowserRouter> */}
   </React.StrictMode>

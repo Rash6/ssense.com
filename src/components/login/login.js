@@ -53,7 +53,7 @@ export const Login = () => {
         console.log("data",res.data)
         dispatch(isLogin(res.data));
         setTimeout(() => {
-          Navigate("/home");
+          Navigate("/");
         }, 1000);
         setUser({
           email: "",

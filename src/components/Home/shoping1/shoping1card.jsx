@@ -4,7 +4,9 @@ export const Shop1 = ({el})=>{
         <div className='catg1div'>
                      <img src={el.img} alt="" className='s1img'/>
                      <h2 className='c1h2'>{el.title}</h2>
-                     <button> {el.btn} </button>
+                     <button onClick={()=>{
+                         (el.id==1)?window.location.href="Menswear":window.location.href="Womenswear"
+                     }}> {el.btn} </button>
                    
                  </div>
     )

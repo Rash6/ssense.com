@@ -7,11 +7,13 @@ function Section4() {
    useEffect(()=>{
     getDataCatg1()
    },[])
-   const getDataCatg1 = ()=>{
-       axios.get("http://localhost:8080/catg4").then((res)=>{
-           console.log(res.data)
-           setCatg1(res.data) 
-       })
+   const getDataCatg1 =async()=>{
+    let val=await fetch(`https://backend-ssense.herokuapp.com/catg4`).then((d)=>
+    d.json()
+    )
+    val=val.catg4
+    console.log(val);
+    setCatg1(val)
    }
   return (
     <div className='mainsec4div'>

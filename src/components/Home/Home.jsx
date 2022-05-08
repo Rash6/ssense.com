@@ -7,8 +7,9 @@ import Shoping2 from './shoping2/shoping2';
 import Section3 from './section3/section3';
 import Shoping3 from './shoping3/shoping3';
 import Section4 from './section4/section4';
-import Footer from './footer/Footer';
-import Navbar from './navbar/Navbar';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
+import { detectOverflow } from '@popperjs/core'
 const Home = () => {
   return (
 <>

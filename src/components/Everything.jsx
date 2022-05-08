@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Menswear.css"
 import "../App.css"
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 //import { Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 
 export const Everything = () => {
@@ -23,8 +25,29 @@ export const Everything = () => {
     getData()
     
   }, [])
+
+  const handleTerminate = (e) => {
+    // console.log(e)
+    
+     // let sort = e.target.value
+     
+     let data2 = men.sort((a, b) => {
+     let aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
+     let bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
+     
+     if (e === 'lowest')
+      { return aPrice - bPrice;
+         } else if (e === 'highest') {
+             return bPrice - aPrice;
+   }
+     })
+    // console.log(data2)
+    setMens([...data2])
+   //getData()
+ }
   return (
     <div>
+        <Navbar/>
         <div className="menswear-container">
 
             <div className="mens-category">
@@ -166,12 +189,12 @@ export const Everything = () => {
 
             {men.map((e)=>
                         {return (
-                        <div key={e.id} className="mens-data-item">
+                          <Link className="mens-data-item" key = {e._id} to = {`${e._id}`}>
                             <img src={e.img} className="menimage" alt="missing"/>
                             <p>{e.name}</p>
                             <p>{e.desc}</p>
                             <p>{e.price}</p>
-                            </div>
+                            </Link>
                             )}
                     )}
             </div>
@@ -183,8 +206,8 @@ export const Everything = () => {
                     <div className="mens-category-list">
                             <ul> Latest arrivals</ul>
                             <ul> Trending</ul>
-                            <ul> Price: Low to high</ul>
-                            <ul> Price: High to low </ul>
+                            <ul onClick={()=>handleTerminate("lowest")} value="lowest"> Price: Low to high</ul>
+                            <ul onClick={()=>handleTerminate("highest")} value="highest"> Price: High to low </ul>
                     </div>
                     <div className="mens-category-title">
                             <h5>COLORS</h5>
@@ -213,7 +236,7 @@ export const Everything = () => {
 
         </div>
 
-
+        <Footer/>
             
         
     </div>

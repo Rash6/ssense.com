@@ -1,11 +1,6 @@
 import "./Navbar.css"
 import React, {useState} from 'react'
  import { Link } from 'react-router-dom';
- import {Routes, Route} from 'react-router-dom'
- // import Button from './LeftBar';
-// import './Dropdown';
-// import {Logo} from "./Ssense_logo.svg"
-import './Navbar.css';
  const Navbar = () => {
 const [click, setClick] =useState(false);
 
@@ -17,28 +12,28 @@ const handelClick =()=>setClick(!click);
 
         <ul className='navbar_list'>
             <li className='left_of_navbar'>
-                <Link to='/mens'  className='link'>
+                <Link to='/Menswear' className='linkf linkmain'  >
                     MENSWEAR
                 </Link>
-                <Link to='/womens'  className='link'>
+                <Link to='/Womenswear'  className='linkf linkmain'>
                     WOMENSWEAR
                 </Link>
-                <Link to='/everything'  className='link'>
-                    EVERYTHINGELSE
+                <Link to='/Everything'  className='linke linkmain'>
+                    EVERYTHING ELSE
                 </Link>
-                <Link to='/search'
-                 className='link'
+                <Link to='/'
+                 className='linkd linkmain'
                  >
                     SEARCH
                 </Link>
             </li>
             <li>
-            <Link to='/'  className='link'>
+            <Link to='/'  className='linkmain'>
             <img src="https://res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg" />
         </Link>
             </li>
             <li className='right_of_navbar'>
-            <Link to='/language'  className='link' id='language'>
+            <Link to='/'  className='linkmain' id='language'>
                <span>ENGLISH</span>
                 <ul className='drop_down'>
                         <li>
@@ -50,31 +45,17 @@ const handelClick =()=>setClick(!click);
                     </ul>
                     
                 </Link>
-                <Link to='/login'  className='link'>
+                <Link to='/login'  className='linkc linkmain'>
                 LOGIN
                 </Link>
-                <Link to='/wishlist' className='link'>
+                <Link to='/' className='linkb linkmain'>
                 WISHLIST
                 </Link>
-                <Link to='/cart'  className='link'>
-                    SHOPPING BAG {`(0)`}
+                <Link to='/Checkout'  className='linka linkmain'>
+                    SHOPPING BAG
                 </Link>
             </li>
         </ul>
-       <Routes>
-{/* 
-<Route path='/mens' element={Menswear}/>
-<Route path='/womens' element={Womenswear}/>
-<Route path='/everythings' element={EverythingElse}/>
-<Route path='/' element={Home}/>
-
-<Route path='/login' element={Login}/>
-<Route path='/wishlist' element={Wishlist}/>
-<Route path='/cart' element={ShoppingBag}/>
-
- */}
-
-       </Routes>
     </nav>
     
     </>

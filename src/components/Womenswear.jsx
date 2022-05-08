@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Menswear.css"
 import "../App.css"
-
-//import  Link  from 'react-router-dom'
-//import { Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import { Link } from 'react-router-dom'
 
 
 export const Womenswear = () => {
@@ -26,6 +26,7 @@ export const Womenswear = () => {
     }, [])
   return (
     <div>
+        <Navbar/>
         <div className="menswear-container">
 
             <div className="mens-category">
@@ -168,12 +169,12 @@ export const Womenswear = () => {
                
                     {men.map((e)=>
                         {return (
-                        <div key={e.id} className="mens-data-item">
+                            <Link className="mens-data-item" key = {e._id} to = {`${e._id}`}>
                             <img className="menimage" src={e.img} alt="missing"/>
                             <p>{e.name}</p>
                             <p>{e.desc}</p>
                             <p>{e.price}</p>
-                            </div>
+                            </Link>
                             )}
                     )}
                 
@@ -218,7 +219,7 @@ export const Womenswear = () => {
         </div>
 
 
-            
+        <Footer/>    
         
     </div>
   )

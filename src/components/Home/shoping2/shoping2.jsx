@@ -7,11 +7,13 @@ function Shoping2() {
    useEffect(()=>{
     getDataCatg1()
    },[])
-   const getDataCatg1 = ()=>{
-       axios.get("http://localhost:8080/shop2").then((res)=>{
-           console.log(res.data)
-           setCatg1(res.data) 
-       })
+   const getDataCatg1 = async()=>{
+    let val=await fetch(`https://backend-ssense.herokuapp.com/shop2`).then((d)=>
+    d.json()
+    )
+    val=val.shop2
+    console.log(val);
+    setCatg1(val)
    }
   return (
     <div className='mainsec1div'>
