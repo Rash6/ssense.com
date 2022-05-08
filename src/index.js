@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ChakraProvider } from "@chakra-ui/react";
+import {BrowserRouter as Router} from "react-router-dom";
+import { Provider as ReduxProvider } from "react-redux";
+import { store } from "./Redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    {/* <BrowserRouter> */}
+    <ReduxProvider store={store}>
+    <Router>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+        
+      </Router>
+      </ReduxProvider>
+    {/* </BrowserRouter> */}
   </React.StrictMode>
 );
 

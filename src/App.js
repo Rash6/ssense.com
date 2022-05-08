@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import {Checkout} from './components/CheckOut';
-import Navbar from './components/Navbar';
-import {BrowserRouter} from "react-router-dom";
-import Footer  from './components/Footer';
-import LeftBar from './components/LeftBar';
+// r...
+import {Link} from "react-router-dom"
+import { Login } from './Components/login/login'
+import {Register} from "./Components/register/register"
+import { Routes, Route } from "react-router-dom";
+// r...
+
 
 
 function App() {
   return (
     <div className="App">
    
-    <Home />
+    {/* <Home />
       <Checkout/>
     <Navbar/>
 
     <LeftBar/>
-    <Footer/>
-    
+    <Footer/> */}
+    <Link className="nav-login" to="/login">
+        Login
+        </Link>
+   
+    <Routes>
+<Route path="/login" element={<Login/>}></Route>
+<Route path="/register" element={<Register/>}></Route>
+    </Routes>
     </div>
   );
 }
