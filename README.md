@@ -1,3 +1,5 @@
+
+
 ## About 
 
 This is a clone of the SSense website (url : https://www.ssense.com/en-in)
@@ -16,9 +18,12 @@ The tech stack we used is :
     ES6 JavaScript
     NodeJs
     MongoDB
+    npm packages
 
 
 We deployed the front-end on Vercel and the backend on Heroku.
+
+
 
 ## Live
 
